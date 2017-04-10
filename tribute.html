@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>A Pen by Marjorie Ivy</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+body {	
+    margin-top: 60px;
+  margin-bottom: 60px;
+  background: rgb(230,230,230);
+  
+  color: rgb(50,50,50);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 112.5%;
+  line-height: 1.6em;
+}
+
+/* ================ The Timeline ================ */
+
+.timeline {
+  position: relative;
+  width: 660px;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 1em 0;
+  list-style-type: none;
+}
+
+.timeline:before {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  content: ' ';
+  display: block;
+  width: 6px;
+  height: 100%;
+  margin-left: -3px;
+  background: rgb(80,80,80);
+  background: -moz-linear-gradient(top, rgba(80,80,80,0) 0%, rgb(80,80,80) 8%, rgb(80,80,80) 92%, rgba(80,80,80,0) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(30,87,153,1)), color-stop(100%,rgba(125,185,232,1)));
+  background: -webkit-linear-gradient(top, rgba(80,80,80,0) 0%, rgb(80,80,80) 8%, rgb(80,80,80) 92%, rgba(80,80,80,0) 100%);
+  background: -o-linear-gradient(top, rgba(80,80,80,0) 0%, rgb(80,80,80) 8%, rgb(80,80,80) 92%, rgba(80,80,80,0) 100%);
+  background: -ms-linear-gradient(top, rgba(80,80,80,0) 0%, rgb(80,80,80) 8%, rgb(80,80,80) 92%, rgba(80,80,80,0) 100%);
+  background: linear-gradient(to bottom, rgba(80,80,80,0) 0%, rgb(80,80,80) 8%, rgb(80,80,80) 92%, rgba(80,80,80,0) 100%);
+  
+  z-index: 5;
+}
+
+.timeline li {
+  padding: 1em 0;
+}
+
+.timeline li:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.direction-l {
+  position: relative;
+  width: 300px;
+  float: left;
+  text-align: right;
+}
+
+.direction-r {
+  position: relative;
+  width: 300px;
+  float: right;
+}
+
+.flag-wrapper {
+  position: relative;
+  display: inline-block;
+  
+  text-align: center;
+}
+
+.flag {
+  position: relative;
+  display: inline;
+  background: rgb(248,248,248);
+  padding: 6px 10px;
+  border-radius: 5px;
+  
+  font-weight: 600;
+  text-align: left;
+}
+
+.direction-l .flag {
+  -webkit-box-shadow: -1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
+  -moz-box-shadow: -1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
+  box-shadow: -1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
+}
+
+.direction-r .flag {
+  -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
+  -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
+}
+
+.direction-l .flag:before,
+.direction-r .flag:before {
+  position: absolute;
+  top: 50%;
+  right: -40px;
+  content: ' ';
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  background: #fff;
+  border-radius: 10px;
+  border: 4px solid rgb(255,80,80);
+  z-index: 10;
+}
+
+.direction-r .flag:before {
+  left: -40px;
+}
+
+.direction-l .flag:after {
+  content: "";
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  height: 0;
+  width: 0;
+  margin-top: -8px;
+  border: solid transparent;
+  border-left-color: rgb(248,248,248);
+  border-width: 8px;
+  pointer-events: none;
+}
+
+.direction-r .flag:after {
+  content: "";
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  height: 0;
+  width: 0;
+  margin-top: -8px;
+  border: solid transparent;
+  border-right-color: rgb(248,248,248);
+  border-width: 8px;
+  pointer-events: none;
+}
+
+.time-wrapper {
+  display: inline;
+  
+  line-height: 1em;
+  font-size: 1.5em;
+  color: rgb(250,80,80);
+  vertical-align: middle;
+}
+
+.direction-l .time-wrapper {
+  float: left;
+}
+
+.direction-r .time-wrapper {
+  float: right;
+}
+
+.time {
+  display: inline-block;
+  padding: 4px 6px;
+  background: rgb(248,248,248);
+}
+
+.desc {
+  margin: 1em 0.75em 0 0;
+  
+  font-size: 1em;
+  font-style: italic;
+  line-height: 1.5em;
+}
+
+.direction-r .desc {
+  margin: 1em 0 0 0.75em;
+}
+
+/* ================ Timeline Media Queries ================ */
+
+@media screen and (max-width: 660px) {
+
+.timeline {
+ 	width: 100%;
+	margin: 0 auto;
+	padding: 4em 0 1em 0;
+	
+}
+
+.timeline li {
+	padding: 2em 0;
+}
+
+.direction-l,
+.direction-r {
+	float: none;
+	width: 100%;
+
+	text-align: center;
+}
+
+.flag-wrapper {
+	text-align: center;
+}
+
+.flag {
+	background: rgb(255,255,255);
+	z-index: 15;
+}
+
+.direction-l .flag:before,
+.direction-r .flag:before {
+  position: absolute;
+  top: -30px;
+	left: 50%;
+	content: ' ';
+	display: block;
+	width: 12px;
+	height: 12px;
+	margin-left: -9px;
+	background: #fff;
+	border-radius: 10px;
+	border: 4px solid rgb(255,80,80);
+	z-index: 10;
+}
+
+.direction-l .flag:after,
+.direction-r .flag:after {
+	content: "";
+	position: absolute;
+	left: 50%;
+	top: -8px;
+	height: 0;
+	width: 0;
+	margin-left: -8px;
+	border: solid transparent;
+	border-bottom-color: rgb(255,255,255);
+	border-width: 8px;
+	pointer-events: none;
+}
+
+.time-wrapper {
+	display: block;
+	position: relative;
+	margin: 4px 0 0 0;
+	z-index: 14;
+}
+
+.direction-l .time-wrapper {
+	float: none;
+}
+
+.direction-r .time-wrapper {
+	float: none;
+}
+
+.desc {
+	position: relative;
+	margin: 1em 0 0 0;
+	padding: 1em;
+	background: rgb(245,245,245);
+	-webkit-box-shadow: 0 0 1px rgba(0,0,0,0.20);
+	-moz-box-shadow: 0 0 1px rgba(0,0,0,0.20);
+	box-shadow: 0 0 1px rgba(0,0,0,0.20);
+	
+  z-index: 15;
+}
+
+.direction-l .desc,
+.direction-r .desc {
+	position: relative;
+	margin: 1em 1em 0 1em;
+	padding: 1em;
+	
+  z-index: 15;
+}
+
+}
+
+@media screen and (min-width: 400px ?? max-width: 660px) {
+
+.direction-l .desc,
+.direction-r .desc {
+	margin: 1em 4em 0 4em;
+}
+
+}
+</style>
+
+  <body>
+<div class="container">
+  <div class="jumbotron">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1 class="text-center">Sheryl Sandberg</h1>
+        <h2 class="text-center"><em>Woman, Work and Will to Succeed</em></h2>
+        <div class="thumbnail"><img src="http://i.huffpost.com/gen/1560230/images/o-LEAN-IN-SANDBERG-facebook.jpg">
+		<div class="caption text-center">Sheryl Sandberg is the chief operating officer of Facebook and best-selling author of Lean In: Women, Work, and the Will to Lead.</div>
+        </div>
+        </div>
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+          <h3>Here's a time line of Sheryl Sandberg's life:</h3>
+         	 <ul class="timeline">
+
+	<!-- Item 1 -->
+	<li>
+		<div class="direction-r">
+			<div class="flag-wrapper">
+				<span class="flag">Born</span>
+				<span class="time-wrapper"><span class="time">1969</span></span>
+			</div>
+			<div class="desc">Born in Washington, D.C.</div>
+		</div>
+	</li>
+  
+	<!-- Item 2 -->
+	<li>
+		<div class="direction-l">
+			<div class="flag-wrapper">
+				<span class="flag">Moved to Miami, Florida</span>
+				<span class="time-wrapper"><span class="time">1971</span></span>
+			</div>
+			<div class="desc">Moved with her family to North Miami Beach, Florida</div>
+		</div>
+	</li>
+
+	<!-- Item 3 -->
+	<li>
+		<div class="direction-r">
+			<div class="flag-wrapper">
+				<span class="flag">Graduated High School</span>
+				<span class="time-wrapper"><span class="time">1987</span></span>
+			</div>
+			<div class="desc">At North Miami Beach Senior High School, Sandberg was in the National Honor Society and graduated ninth in her class, with a 4.6 GPA.</div>
+		</div>
+	</li>
+
+	<!-- Item 4 -->
+	<li>
+		<div class="direction-l">
+			<div class="flag-wrapper">
+				<span class="flag">Degree in Economics</span>
+				<span class="time-wrapper"><span class="time">1991 - 1993</span></span>
+			</div>
+			<div class="desc">Graduated summa cum laude, majored in Economics. At the same year Lawrence Summers asked Sandberg to be one of his research assistants. Sandberg married Washington businessman Brian Kraff</div>
+		</div>
+	</li>
+
+	<!-- Item 5 -->
+	<li>
+		<div class="direction-l">
+			<div class="flag-wrapper">
+				<span class="flag">Divorced</span>
+				<span class="time-wrapper"><span class="time">1992</span></span>
+			</div>
+			<div class="desc">Divorced Brian Kraff</div>
+		</div>
+	</li>
+
+		<!-- Item 6 -->
+	<li>
+		<div class="direction-r">
+			<div class="flag-wrapper">
+				<span class="flag">M.B.A</span>
+				<span class="time-wrapper"><span class="time">1995</span></span>
+			</div>
+			<div class="desc">Enrolled at Harvard Business School, attaining her M.B.A and graduated with distinction</div>
+		</div>
+	</li>
+	
+	<!-- Item 7 -->
+	<li>
+		<div class="direction-l">
+			<div class="flag-wrapper">
+				<span class="flag">Chief of Staff</span>
+				<span class="time-wrapper"><span class="time">1999 - 2001</span></span>
+			</div>
+			<div class="desc">Sandberg became chief of staff of Lawrence Summers during Clinton's Administration</div>
+		</div>
+	</li>
+	
+	
+</ul>
+
+
+		 <ul>
+           
+           
+            
+           
+                 
+			     
+            <li><strong>1999 - 2001</strong> - Sandberg became chief of staff of Lawrence Summers during Clinton's Administration</li>      
+            <li><strong>2001 - 2008</strong> - Sandberg accepted Google's offer as Vice President and described Google's mission as "to make the world's information freely available"</li>        
+			<li><strong>2004</strong> - Sandberg married Dave Goldberg, a Yahoo! executive</li>        
+            <li><strong>2008</strong> - Joins Facebook as COO</li>
+            <li><strong>2012</strong> - Sandberg became the first female member of the company's board of directors</li>    
+            <li><strong>2014</strong> - Made her way to billionaire's list in early 2014</li>        
+            <li><strong>2015</strong> - Dave Goldberg died due to head trauma. Sandberg wrote Lean In</li>        
+          </ul>
+      
+
+
+	  
+	  
+	  
+		  <blockquote>
+            <p>"Dave was my rock. When I got upset, he stayed calm. When I was worried, he said it would be ok. When I wasn't sure what to do, he figured it out. He was completely dedicated to his children in every way – and their strength these past few days is the best sign I could have that Dave is still here with us in spirit. . .Things will never be the same – but the world is better for the years my beloved husband lived." </p>
+            <footer><cite>Sheryl Sandberg, May 1, 2015</cite></footer>
+          </blockquote>
+          
+		  <h3>If you have time, you should see more about Sheryl Sandberg and her motivational speech about Women's role in our society in her<a href="https://www.ted.com/talks/sheryl_sandberg_why_we_have_too_few_women_leaders" target="_blank">TED Talks</a>.</h3>
+        </div>
+      </div>
+    </div> 
+  </div>
+  <footer class="text-center">
+    <hr>
+    <p>Written and coded by <a href="https://www.freecodecamp.com/mmorenoivy" target="_blank">Marjorie Ivy</a>.</p>
+  </footer>  
+  </body>
+</div>  
+</html>
