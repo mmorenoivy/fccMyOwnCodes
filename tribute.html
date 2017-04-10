@@ -21,7 +21,13 @@ body {
   font-size: 112.5%;
   line-height: 1.6em;
 }
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
 
+  display: flex;
+  align-items: center;
+}
 /* ================ The Timeline ================ */
 
 .timeline {
@@ -196,8 +202,9 @@ body {
 @media screen and (max-width: 660px) {
 
 .timeline {
+	position: absolute;
  	width: 100%;
-	margin: 0 auto;
+	float: center;
 	padding: 4em 0 1em 0;
 	
 }
@@ -238,6 +245,8 @@ body {
 	border: 4px solid rgb(255,80,80);
 	z-index: 10;
 }
+
+
 
 .direction-l .flag:after,
 .direction-r .flag:after {
@@ -346,7 +355,10 @@ body {
 				<span class="flag">Graduated High School</span>
 				<span class="time-wrapper"><span class="time">1987</span></span>
 			</div>
-			<div class="desc">At North Miami Beach Senior High School, Sandberg was in the National Honor Society and graduated ninth in her class, with a 4.6 GPA.</div>
+			<div class="desc">At North Miami Beach Senior High School, 
+			<br>Sandberg was in the National Honor Society 
+			<br>and graduated ninth in her class, 
+			<br>with a 4.6 GPA.</div>
 		</div>
 	</li>
 
@@ -357,7 +369,18 @@ body {
 				<span class="flag">Degree in Economics</span>
 				<span class="time-wrapper"><span class="time">1991 - 1993</span></span>
 			</div>
-			<div class="desc">Graduated summa cum laude, majored in Economics. At the same year Lawrence Summers asked Sandberg to be one of his research assistants. Sandberg married Washington businessman Brian Kraff</div>
+			<div class="desc">Graduated summa cum laude, majored in Economics. At the same year Lawrence Summers asked Sandberg to be one of his research assistants.</div>
+		</div>
+	</li>
+	
+	<!-- Item 4 -->
+	<li>
+		<div class="direction-l">
+			<div class="flag-wrapper">
+				<span class="flag">Got Married</span>
+				<span class="time-wrapper"><span class="time">1991</span></span>
+			</div>
+			<div class="desc">Sandberg married Washington businessman Brian Kraff</div>
 		</div>
 	</li>
 
@@ -379,7 +402,8 @@ body {
 				<span class="flag">M.B.A</span>
 				<span class="time-wrapper"><span class="time">1995</span></span>
 			</div>
-			<div class="desc">Enrolled at Harvard Business School, attaining her M.B.A and graduated with distinction</div>
+			<div class="desc">Enrolled at Harvard Business School, attaining
+<br>			her M.B.A and graduated with distinction</div>
 		</div>
 	</li>
 	
@@ -394,37 +418,73 @@ body {
 		</div>
 	</li>
 	
+	<!-- Item 8 -->
+	<li>
+		<div class="direction-r">
+			<div class="flag-wrapper">
+				<span class="flag">Vice-President</span>
+				<span class="time-wrapper"><span class="time">2001 - 2008</span></span>
+			</div>
+			<div class="desc">Sandberg accepted Google's offer as Vice President and 
+			<br>described Google's mission as "to make the world's information freely available"</div>
+		</div>
+	</li>
 	
+	<!-- Item 9 -->
+	<li>
+		<div class="direction-r">
+			<div class="flag-wrapper">
+				<span class="flag">Got Married</span>
+				<span class="time-wrapper"><span class="time">2004</span></span>
+			</div>
+			<div class="desc">Sandberg married Dave Goldberg, a Yahoo! executive</div>
+		</div>
+	</li>
+
+	<li>
+		<div class="direction-l">
+			<div class="flag-wrapper">
+				<span class="flag">Chief Operating Officer</span>
+				<span class="time-wrapper"><span class="time">2008 - present</span></span>
+			</div>
+			<div class="desc">Joins Facebook as COO</div>
+		</div>
+	</li>
+	<li>
+		<div class="direction-r">
+			<div class="flag-wrapper">
+				<span class="flag">Board Director, Facebook</span>
+				<span class="time-wrapper"><span class="time">2012</span></span>
+			</div>
+			<div class="desc">Sandberg became the first female member of the company's board of directors</div>
+		</div>
+	</li>
+	<li>
+		<div class="direction-l">
+			<div class="flag-wrapper">
+				<span class="flag">Billionaire's Club</span>
+				<span class="time-wrapper"><span class="time">2014</span></span>
+			</div>
+			<div class="desc">Made her way to billionaire's list in early 2014</div>
+		</div>
+	</li>
+	<li>
+		<div class="direction-r">
+			<div class="flag-wrapper">
+				<span class="flag">Goldberg passes</span>
+				<span class="time-wrapper"><span class="time">2015</span></span>
+			</div>
+			<div class="desc">Dave Goldberg died due to head trauma. Sandberg wrote Lean In</div>
+		</div>
+	</li>
+
 </ul>
-
-
-		 <ul>
-           
-           
-            
-           
-                 
-			     
-            <li><strong>1999 - 2001</strong> - Sandberg became chief of staff of Lawrence Summers during Clinton's Administration</li>      
-            <li><strong>2001 - 2008</strong> - Sandberg accepted Google's offer as Vice President and described Google's mission as "to make the world's information freely available"</li>        
-			<li><strong>2004</strong> - Sandberg married Dave Goldberg, a Yahoo! executive</li>        
-            <li><strong>2008</strong> - Joins Facebook as COO</li>
-            <li><strong>2012</strong> - Sandberg became the first female member of the company's board of directors</li>    
-            <li><strong>2014</strong> - Made her way to billionaire's list in early 2014</li>        
-            <li><strong>2015</strong> - Dave Goldberg died due to head trauma. Sandberg wrote Lean In</li>        
-          </ul>
-      
-
-
-	  
-	  
-	  
 		  <blockquote>
             <p>"Dave was my rock. When I got upset, he stayed calm. When I was worried, he said it would be ok. When I wasn't sure what to do, he figured it out. He was completely dedicated to his children in every way – and their strength these past few days is the best sign I could have that Dave is still here with us in spirit. . .Things will never be the same – but the world is better for the years my beloved husband lived." </p>
             <footer><cite>Sheryl Sandberg, May 1, 2015</cite></footer>
           </blockquote>
           
-		  <h3>If you have time, you should see more about Sheryl Sandberg and her motivational speech about Women's role in our society in her<a href="https://www.ted.com/talks/sheryl_sandberg_why_we_have_too_few_women_leaders" target="_blank">TED Talks</a>.</h3>
+		  <h3>If you have time, you should see more about Sheryl Sandberg and her motivational speech about Women's role in our society in her<a href="https://www.ted.com/talks/sheryl_sandberg_why_we_have_too_few_women_leaders" target="_blank"> TED Talks</a>.</h3>
         </div>
       </div>
     </div> 
